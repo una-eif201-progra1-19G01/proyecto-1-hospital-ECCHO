@@ -46,6 +46,7 @@ public:
     void addPabellon();
 
     void eliminarPabellon();
+
 };
 
 
