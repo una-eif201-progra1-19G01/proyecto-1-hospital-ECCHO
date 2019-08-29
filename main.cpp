@@ -5,6 +5,6 @@ int main() {
 
     Hospital V1;
 
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Hasta luego Maria Juana esto es solo una prueba" << std::endl;
     return 0;
 }
