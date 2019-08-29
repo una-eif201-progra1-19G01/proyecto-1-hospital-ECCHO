@@ -1,6 +1,11 @@
 #include <iostream>
+#include "Interfaz.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Interfaz inter = Interfaz();
+
+    inter.correrInterfaz();
+
+    std::cout << "Hasta luego Maria Juana esto es solo una prueba" << std::endl;
     return 0;
 }

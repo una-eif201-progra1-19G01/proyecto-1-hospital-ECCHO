@@ -3,4 +3,4 @@ project(Hospital)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Hospital main.cpp Hospital.h Hospital.cpp)
+add_executable(Hospital main.cpp Hospital.cpp Hospital.h)
