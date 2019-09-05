@@ -1,0 +1,3 @@
+C:/Users/Noel Muñoz/source/repos/proyecto-1-hospital-ECCHO/out/build/x64-Debug/CMakeFiles/Hospital.dir
+C:/Users/Noel Muñoz/source/repos/proyecto-1-hospital-ECCHO/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Noel Muñoz/source/repos/proyecto-1-hospital-ECCHO/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
