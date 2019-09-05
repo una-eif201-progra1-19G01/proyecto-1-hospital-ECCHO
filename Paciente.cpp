@@ -17,7 +17,7 @@ Paciente::Paciente() {
 	setPrioridad(" ");
 	setFechaCirugia(0);
 	vector = new Paciente * [200];
-
+	/
 }
 
 Paciente::Paciente(std::string cedula, std::string nombre, std::string apellido, char sexo, std::string direccion, std::string patologia,

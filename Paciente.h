@@ -15,7 +15,7 @@ private:
 	std::string estado;
 	std::string prioridad;
 	int fechaCirugia;
-
+	/
 	Paciente** vector;
 
 public:
