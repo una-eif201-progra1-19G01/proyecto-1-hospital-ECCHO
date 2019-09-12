@@ -51,6 +51,8 @@ public:
     Paciente *getPPaciente() const;
 
     void setPPaciente(Paciente *pPaciente);
+
+	string tostring();
 };
 
 #endif //DOCTOR_H
