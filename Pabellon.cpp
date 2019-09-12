@@ -77,7 +77,11 @@ void Pabellon::setPPabellon(Pabellon **pPabellon) {
 }
 
 Pabellon::~Pabellon() {
+	delete[] pPabellon;
+}
 
+void Pabellon::agregar(Pabellon *pPa) {
+	pPabellon[cantidad++] = pPa;
 }
 
 

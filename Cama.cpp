@@ -6,7 +6,14 @@ using namespace std;
 
 Cama::Cama() {}
 
-Cama::Cama(int cantidad, int tamano, Cama **pCama) : cantidad(cantidad), tamano(tamano), pCama(pCama) {}
+Cama::Cama(int cantidad, int tamano, Cama** pCama) : cantidad(cantidad), tamano(tamano), pCama(pCama) {
+	tamano = MAXIMOCAMA;
+	pCama = new Cama * [tamano];
+	cantidad = 0;
+	for (int i = 0; i < tamano; i++) {
+		pCama[i] = NULL;
+	}
+}
 
 
 Cama::Cama(const string &codigo, bool estado, Paciente *ePaciente) : codigo(codigo), estado(estado),
@@ -62,3 +69,6 @@ void Cama::setEPaciente(Paciente *ePaciente) {
     Cama::ePaciente = ePaciente;
 }
 
+void Cama::agregar(Cama* pCam) {
+	pCama[cantidad++] = pCam;
+}

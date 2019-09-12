@@ -1,5 +1,8 @@
 #include<string>
 #include"Especialidad.h"
+#include<sstream>
+#include<iostream>
+
 
 using ::std::string;
 
@@ -58,4 +61,17 @@ int Especialidad::getCantidad() const {
 
 void Especialidad::setCantidad(int cantidad) {
     Especialidad::cantidad = cantidad;
+}
+
+void Especialidad::agregarEsp(Especialidad* pEsp) {
+	pEspecialidad[cantidad++] = pEsp;
+}
+
+string Especialidad::toStringEspecialidad() {
+	stringstream x;
+	x << "Especialidades: \n";
+	for (int especialidad = 0; especialidad < cantidad; especialidad++) {
+		x << pEspecialidad[especialidad]->toStringEspecialidad();
+	}
+	return x.str();
 }

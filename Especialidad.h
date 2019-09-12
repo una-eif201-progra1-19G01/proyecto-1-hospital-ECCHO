@@ -40,6 +40,10 @@ public:
     int getCantidad() const;
 
     void setCantidad(int cantidad);
+
+	void agregarEsp(Especialidad *pEsp);
+
+	std::string toStringEspecialidad();
 };
 #endif //ESPECIALIDAD_H
 

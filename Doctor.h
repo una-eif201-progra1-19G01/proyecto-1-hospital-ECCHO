@@ -56,6 +56,9 @@ public:
     void setPPaciente(Paciente *pPaciente);
 
 	virtual string tostring();
+
+	void agregar(Doctor* pDoc);
+
 };
 
 #endif //DOCTOR_H

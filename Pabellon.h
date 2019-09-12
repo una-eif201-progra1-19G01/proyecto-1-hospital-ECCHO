@@ -59,6 +59,8 @@ public:
 
     void setPCama(Cama *pCama);
 
+	void agregar(Pabellon* pPa);
+
 };
 
 #endif //PABELLON_H

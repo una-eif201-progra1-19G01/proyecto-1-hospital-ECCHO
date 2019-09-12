@@ -49,6 +49,8 @@ public:
 
     void setEPaciente(Paciente *ePaciente);
 
+	void agregar(Cama* pCam);
+
 };
 #endif //CAMA_H
 
