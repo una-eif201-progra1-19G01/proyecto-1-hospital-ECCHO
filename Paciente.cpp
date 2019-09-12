@@ -1,105 +1,180 @@
-#include<iostream>
+
 #include<string>
-#include<sstream>
 #include"Paciente.h"
 using::std::string;
+using namespace std;
 
-//Constructores
-Paciente::Paciente() {
-	setCedula(" ");
-	setNombre(" ");
-	setApellido(" ");
-	setSexo(' ');
-	setDireccion(" ");
-	setPatologia(" ");
-	setTipoCirugia(" ");
-	setEstado(" ");   
-	setPrioridad(" ");
-	setFechaCirugia(0);
-	vector = new Paciente * [200];
-	/
-}
 
-Paciente::Paciente(std::string cedula, std::string nombre, std::string apellido, char sexo, std::string direccion, std::string patologia,
-	std::string tipoCirugia, std::string estado, std::string prioridad, int fechaCirugia) : cedula(cedula), nombre(nombre),
-	apellido(apellido), sexo(sexo), direccion(direccion), patologia(patologia), tipoCirugia(tipoCirugia), estado(estado),
-	prioridad(prioridad), fechaCirugia(fechaCirugia) {}
+Paciente::Paciente() {}
 
+Paciente::Paciente(const string &cedula, const string &nombre, const string &apellido, char sexo,
+                   const string &direccion, const string &patologia, const string &tipoCirugia, const string &estado,
+                   const string &prioridad, int fechaCirugia, Cama *pCama, Doctor *pDoctor) :
+                   cedula(cedula),nombre(nombre),apellido(apellido),sexo(sexo),direccion(direccion),patologia(patologia),
+                   tipoCirugia(tipoCirugia),estado(estado),prioridad(prioridad),fechaCirugia(fechaCirugia),
+                   pCama(pCama),pDoctor(pDoctor) {}
+
+
+Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(pPaciente), cantidad(cantidad),
+                                                                     tamano(tamano) {}
 //Destructor
 Paciente::~Paciente() {}
 
-//Metodos SET
-void Paciente::setCedula(std::string cedula) {
-	Paciente::cedula = cedula;
+
+//PACIENTE
+
+Paciente **Paciente::getPPaciente() const {
+    return pPaciente;
 }
-void Paciente::setNombre(std::string nombre) {
-	Paciente::nombre = nombre;
+
+void Paciente::setPPaciente(Paciente **pPaciente) {
+    Paciente::pPaciente = pPaciente;
 }
-void Paciente::setApellido(std::string apellido) {
-	Paciente::apellido = apellido;
+
+//CANTIDAD
+int Paciente::getCantidad() const {
+    return cantidad;
 }
+
+void Paciente::setCantidad(int cantidad) {
+    Paciente::cantidad = cantidad;
+}
+
+//TAMANO
+
+int Paciente::getTamano() const {
+    return tamano;
+}
+
+void Paciente::setTamano(int tamano) {
+    Paciente::tamano = tamano;
+}
+
+//CEDULA
+
+const string &Paciente::getCedula() const {
+    return cedula;
+}
+
+void Paciente::setCedula(const string &cedula) {
+    Paciente::cedula = cedula;
+}
+
+//NOMBRE
+
+const string &Paciente::getNombre() const {
+    return nombre;
+}
+
+void Paciente::setNombre(const string &nombre) {
+    Paciente::nombre = nombre;
+}
+
+//APELLIDO
+
+const string &Paciente::getApellido() const {
+    return apellido;
+}
+
+void Paciente::setApellido(const string &apellido) {
+    Paciente::apellido = apellido;
+}
+
+//SEXO  ( ͡° ͜ʖ ͡°)
+
+char Paciente::getSexo() const {
+    return sexo;
+}
+
 void Paciente::setSexo(char sexo) {
-	Paciente::sexo = sexo;
+    Paciente::sexo = sexo;
 }
-void Paciente::setDireccion(std::string direccion) {
-	Paciente::direccion = direccion;
+
+//DIRECCION
+
+const string &Paciente::getDireccion() const {
+    return direccion;
 }
-void Paciente::setPatologia(std::string patologia) {
-	Paciente::patologia = patologia;
+
+void Paciente::setDireccion(const string &direccion) {
+    Paciente::direccion = direccion;
 }
-void Paciente::setTipoCirugia(std::string tipoCirugia) {
-	Paciente::tipoCirugia = tipoCirugia;
+
+//PATOLOGIA
+
+const string &Paciente::getPatologia() const {
+    return patologia;
 }
-void Paciente::setEstado(std::string estado) {
-	Paciente::estado = estado;
+
+void Paciente::setPatologia(const string &patologia) {
+    Paciente::patologia = patologia;
 }
-void Paciente::setPrioridad(std::string prioridad) {
-	Paciente::prioridad = prioridad;
+
+//TIPO DE CIRUGIA
+
+const string &Paciente::getTipoCirugia() const {
+    return tipoCirugia;
 }
+
+void Paciente::setTipoCirugia(const string &tipoCirugia) {
+    Paciente::tipoCirugia = tipoCirugia;
+}
+
+//ESTADO DEL PACIENTE
+
+const string &Paciente::getEstado() const {
+    return estado;
+}
+
+void Paciente::setEstado(const string &estado) {
+    Paciente::estado = estado;
+}
+
+
+//PRIORIDAD
+const string &Paciente::getPrioridad() const {
+    return prioridad;
+}
+
+void Paciente::setPrioridad(const string &prioridad) {
+    Paciente::prioridad = prioridad;
+}
+
+//FECHA DE LA CIRUGIA
+
+int Paciente::getFechaCirugia() const {
+    return fechaCirugia;
+}
+
 void Paciente::setFechaCirugia(int fechaCirugia) {
-	Paciente::fechaCirugia = fechaCirugia;
+    Paciente::fechaCirugia = fechaCirugia;
 }
 
-//Metodos GET
-std::string Paciente::getCedula() {
-	return cedula;
-}
-std::string Paciente::getNombre() {
-	return nombre;
-}
-std::string Paciente::getApellido() {
-	return apellido;
-}
-std::string Paciente::getDireccion() {
-	return direccion;
-}
-char Paciente::getSexo() {
-	return sexo;
+//VECTOR DE CAMAS
+
+Cama *Paciente::getPCama() const {
+    return pCama;
 }
 
-std::string Paciente::getPatologia() {
-	return patologia;
-}
-std::string Paciente::getTipoCirugia() {
-	return tipoCirugia;
-}
-std::string Paciente::getEstado() {
-	return estado;
-}
-std::string Paciente::getPrioridad() {
-	return prioridad;
-}
-int Paciente::getFechaCirugia() {
-	return fechaCirugia;
+void Paciente::setPCama(Cama *pCama) {
+    Paciente::pCama = pCama;
 }
 
-void Paciente::anadirVector() {
-	for (int i = 0; i < tam; i++) {
-		vector[i] = NULL;
+//VECTOR DE DOCTOR
 
-	}
+Doctor *Paciente::getPDoctor() const {
+    return pDoctor;
 }
 
-void Paciente::agregar(Paciente* x) {
-	vector[cantidad++] = x;
+void Paciente::setPDoctor(Doctor *pDoctor) {
+    Paciente::pDoctor = pDoctor;
 }
+
+
+
+
+
+
+
+
+

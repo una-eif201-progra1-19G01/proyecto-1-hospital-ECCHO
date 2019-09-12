@@ -12,7 +12,7 @@ Doctor::Doctor() {
 
 Doctor::Doctor(std::string nombre, std::string especialidad) : nombre(nombre), especialidad(especialidad) {}
 
-Doctor::~Doctor() {}
+
 
 void Doctor::setNombre(std::string nombre) {
 	Doctor::nombre = nombre;
@@ -28,3 +28,5 @@ std::string Doctor::getNombre() {
 std::string Doctor::getEspecialidad() {
 	return especialidad;
 }
+
+Doctor::~Doctor() {} //DESTRUCTOR

@@ -12,9 +12,9 @@ public:
 	Doctor();
 	Doctor(std::string, std::string);
 
-	~Doctor() {};
+    virtual ~Doctor();
 
-	void setNombre(std::string);
+    void setNombre(std::string);
 	void setEspecialidad(std::string);
 
 	std::string getNombre();

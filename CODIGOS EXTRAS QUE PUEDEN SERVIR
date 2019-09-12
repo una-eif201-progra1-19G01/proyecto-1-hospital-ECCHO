@@ -1,0 +1,54 @@
+
+//CONSTRUCTOR ORIGINAL DE NOEL
+
+Paciente::Paciente() {
+    setCedula(" ");
+    setNombre(" ");
+    setApellido(" ");
+    setSexo(' ');
+    setDireccion(" ");
+    setPatologia(" ");
+    setTipoCirugia(" ");
+    setEstado(" ");
+    setPrioridad(" ");
+    setFechaCirugia(0);
+
+
+}
+
+
+// GETTERS Y SETTERS
+void setCedula(std::string cedula);
+
+    void setNombre(std::string nombre);
+
+    void setApellido(std::string apellido);
+
+    void setSexo(char);
+
+    void setDireccion(std::string direccion);
+
+    void setPatologia(std::string patologia);
+
+    void setTipoCirugia(std::string tipoCirugia);
+
+    void setEstado(std::string estado);
+
+    void setPrioridad(std::string prioridad);
+
+    void setFechaCirugia(int fechaCirugia);
+
+    std::string getCedula();
+
+    std::string getNombre();
+
+    std::string getApellido();
+
+    char getSexo();
+
+    std::string getDireccion();
+
+    std::string getPatologia();
+
+    std::string getTipoCirugia();
+

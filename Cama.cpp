@@ -2,27 +2,34 @@
 #include<string>
 #include<sstream>
 #include"Cama.h"
-using::std::string;
+
+using ::std::string;
+
 Cama::Cama() {
-	setCodigo(" ");
-	setEstado();
+    setCodigo(" ");
+    setEstado();
 }
 
 Cama::Cama(std::string codigo, bool estado) : codigo(codigo), estado(estado) {}
 
-Cama::~Cama() {}
+Cama::~Cama() {
+
+}
 
 void Cama::setCodigo(std::string codigo) {
-	Cama::codigo = codigo;
+    Cama::codigo = codigo;
 }
+
 void Cama::setEstado(bool estado) {
-	Cama::estado = estado;
+    Cama::estado = estado;
 }
 
 std::string Cama::getCodigo() {
-	return codigo;
+    return codigo;
 }
 
 bool Cama::getEstado() {
-	return estado;
+    return estado;
 }
+
+
