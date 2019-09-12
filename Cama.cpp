@@ -1,5 +1,7 @@
 #include<string>
 #include"Cama.h"
+#include<sstream>
+#include<iostream>
 
 using namespace std;
 
@@ -83,4 +85,12 @@ Cama* Cama::buscarCama(string codigo) {
 	}
 }
 
-
+string Cama::toStringCama() {
+	stringstream c;
+	c << "Cama por Codigo: \n";
+	for (int cama = 0; cama < cantidad; cama++) {
+		c << "Codigo: ";
+		c << pCama[cama]->toStringCama();
+	}
+	return c.str();
+}
