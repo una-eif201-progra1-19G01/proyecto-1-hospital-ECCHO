@@ -3,11 +3,7 @@
 
 using ::std::string;
 
-<<<<<<< HEAD
-Especialidad::Especialidad() {}
-// Especialidad::Especialidad() {}
-// Especialidad::~Especialidad() {}
-=======
+
 Especialidad::Especialidad(const string &especialidad) : especialidad(especialidad) {}
 
 Especialidad::Especialidad(int tamano, int cantidad, Especialidad **pEspecialidad) : tamano(tamano), cantidad(cantidad),
@@ -63,8 +59,3 @@ int Especialidad::getCantidad() const {
 void Especialidad::setCantidad(int cantidad) {
     Especialidad::cantidad = cantidad;
 }
-
-
-
-
->>>>>>> 0bc6962a387566443391c828bbbbe42171d6d423

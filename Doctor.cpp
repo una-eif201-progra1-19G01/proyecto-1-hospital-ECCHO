@@ -1,5 +1,4 @@
 #include<string>
-#include <sstream>
 #include"Doctor.h"
 
 using namespace std;
@@ -78,10 +77,6 @@ void Doctor::setPPaciente(Paciente *pPaciente) {
     Doctor::pPaciente = pPaciente;
 }
 
-
-string Doctor::tostring(){
-	stringstream d;
-	d<<"Doctor: "<<nombre<<"\n";
-	d<<"Especialidad: "<<especialidad<<"\n";
-	return d.str();
+string Doctor::tostring() {
+    return std::__cxx11::string();
 }

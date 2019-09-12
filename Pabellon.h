@@ -4,6 +4,7 @@
 #include <string>
 #include "Cama.h"
 
+
 class Cama;
 
 int const MAXIMOPABE = 10;
@@ -11,30 +12,6 @@ int const MAXIMOPABE = 10;
 class Pabellon {
 
 private:
-<<<<<<< HEAD
-	// Pabellon *pPabellon;
-	int _cantidad;
-	int _numberoDeCamas;
-	int _camas;
-	char _genero;
-
-public:
-	Pabellon();
-	Pabellon(char genero);
-	// Pabellon() {}
-	~Pabellon();
-
-	std::string getPabellon();
-
-	int getCantidad() const;
-	void setCantidad(int cantidad);
-
-	int getNumeroDeCamas();
-	void setNumeroDeCamas(int camas);
-
-	int getGenero() const;
-	void setGenero(char genero);
-=======
 
     char iD;
     string genero;
@@ -81,10 +58,7 @@ public:
     void setNumCamas(int numCamas);
 
     void setPCama(Cama *pCama);
->>>>>>> 0bc6962a387566443391c828bbbbe42171d6d423
 
-	bool addPabellon(char genero);
-	
 };
 
 #endif //PABELLON_H

@@ -68,21 +68,21 @@ void Interfaz::pabellones(){
     cout << "Opción: ";
     cin >> opcionPabellon;
 
-    if (opcionPabellon == 1){
-        hosp.getPabellon();
-    }
-    else if (opcionPabellon == 2){
-        hosp.addPabellon('M'); //TODO: Cambiar esto
-    }
-    else if (opcionPabellon == 3){
+   // if (opcionPabellon == 1){
+     //   hosp.getPabellon();
+   // }
+   // else if (opcionPabellon == 2){
+    //    hosp.addPabellon('M'); //TODO: Cambiar esto
+   // }
+   // else if (opcionPabellon == 3){
         // hosp.eliminarPabellon();
-    }
-    else if (opcionPabellon == 4){
+   // }
+   // else if (opcionPabellon == 4){
         // hosp.setPabellon();
-    }
-    else{
+  //  }
+   // else{
         
-    }
+   // }
 }
 
 

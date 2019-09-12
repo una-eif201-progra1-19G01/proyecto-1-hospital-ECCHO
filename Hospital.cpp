@@ -10,24 +10,26 @@ std::string Hospital::getPabellon(){
     for (int i = 0; i < pab.getCantidad(); i++) {
         std::cout << i << ": Género = " << pPabellon[i].getGenero();
     }
+    return 0;
 }
 
 void Hospital::setPabellon(){
 
 }
 
-void Hospital::addPabellon(char genero){
-    if (pab.getCantidad() >= 10) {
+// ***************REVISAR ESTE METODO******************
+//void Hospital::addPabellon(char genero){
+  //  if (pab.getCantidad() >= 10) {
         //ERROR
-    } else {
-        int cantidad = pab.getCantidad();
-        pPabellon[cantidad] = Pabellon(genero);
+    //} else {
+      //  int cantidad = pab.getCantidad();
+        //pPabellon[cantidad] = Pabellon(genero);
         
-        pab.setCantidad(cantidad+1);
-    }
+        //pab.setCantidad(cantidad+1);
+    //}
     
 
-}
+///}
 
 void Hospital::eliminarPabellon(){
 
