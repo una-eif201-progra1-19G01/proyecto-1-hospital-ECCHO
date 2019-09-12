@@ -19,7 +19,9 @@ Cama::Cama(int cantidad, int tamano, Cama** pCama) : cantidad(cantidad), tamano(
 Cama::Cama(const string &codigo, bool estado, Paciente *ePaciente) : codigo(codigo), estado(estado),
                                                                      ePaciente(ePaciente) {}
 
-Cama::~Cama() {}
+Cama::~Cama() {
+	delete[] pCama;
+}
 
 int Cama::getCantidad() const {
     return cantidad;
@@ -72,3 +74,13 @@ void Cama::setEPaciente(Paciente *ePaciente) {
 void Cama::agregar(Cama* pCam) {
 	pCama[cantidad++] = pCam;
 }
+
+Cama* Cama::buscarCama(string codigo) {
+	for (int cam = 0; cam < cantidad; cam++) {
+		if ((pCama[cam]->getCodigo() == codigo) && (pCama[cam]->getEstado() == false)) {
+			return pCama[cam];
+		}
+	}
+}
+
+

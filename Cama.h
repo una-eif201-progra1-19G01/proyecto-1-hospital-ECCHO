@@ -51,6 +51,8 @@ public:
 
 	void agregar(Cama* pCam);
 
+	Cama* buscarCama(string codigo);
+
 };
 #endif //CAMA_H
 
