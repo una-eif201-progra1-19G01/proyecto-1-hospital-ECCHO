@@ -7,7 +7,7 @@ using namespace std;
 Cama::Cama() {}
 
 Cama::Cama(int cantidad, int tamano, Cama** pCama) : cantidad(cantidad), tamano(tamano), pCama(pCama) {
-	tamano = MAXIMOCAMA;
+	tamano = 0;
 	pCama = new Cama * [tamano];
 	cantidad = 0;
 	for (int i = 0; i < tamano; i++) {
