@@ -59,3 +59,11 @@ Paciente *Doctor::getPPaciente() const {
 void Doctor::setPPaciente(Paciente *pPaciente) {
     Doctor::pPaciente = pPaciente;
 }
+
+
+string doctor::tostring(){
+	stringstream d;
+	d<<"Doctor: "<<nombre<<"\n";
+	d<<"Especialidad: "<<especialidad<<"\n";
+	return d.str();
+}
