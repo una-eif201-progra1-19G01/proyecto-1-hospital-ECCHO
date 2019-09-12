@@ -1,32 +1,61 @@
-#include<iostream>
 #include<string>
-#include<sstream>
 #include"Doctor.h"
-using::std::string;
 
-Doctor::Doctor() {
-	setNombre(" ");
-	setEspecialidad(" ");
+using namespace std;
 
+
+Doctor::Doctor(Doctor **pDoctor, int cantidad, int tamano) : pDoctor(pDoctor), cantidad(cantidad), tamano(tamano) {}
+
+Doctor::Doctor(const string &nombre, const string &especialidad, Paciente *pPaciente) : nombre(nombre),
+                                                                                        especialidad(especialidad),
+                                                                                        pPaciente(pPaciente) {}
+
+Doctor::~Doctor() {}
+
+Doctor **Doctor::getPDoctor() const {
+    return pDoctor;
 }
 
-Doctor::Doctor(std::string nombre, std::string especialidad) : nombre(nombre), especialidad(especialidad) {}
-
-
-
-void Doctor::setNombre(std::string nombre) {
-	Doctor::nombre = nombre;
-}
-void Doctor::setEspecialidad(std::string especialidad) {
-	Doctor::especialidad = especialidad;
+void Doctor::setPDoctor(Doctor **pDoctor) {
+    Doctor::pDoctor = pDoctor;
 }
 
-std::string Doctor::getNombre() {
-	return nombre;
+int Doctor::getCantidad() const {
+    return cantidad;
 }
 
-std::string Doctor::getEspecialidad() {
-	return especialidad;
+void Doctor::setCantidad(int cantidad) {
+    Doctor::cantidad = cantidad;
 }
 
-Doctor::~Doctor() {} //DESTRUCTOR
+int Doctor::getTamano() const {
+    return tamano;
+}
+
+void Doctor::setTamano(int tamano) {
+    Doctor::tamano = tamano;
+}
+
+const string &Doctor::getNombre() const {
+    return nombre;
+}
+
+void Doctor::setNombre(const string &nombre) {
+    Doctor::nombre = nombre;
+}
+
+const string &Doctor::getEspecialidad() const {
+    return especialidad;
+}
+
+void Doctor::setEspecialidad(const string &especialidad) {
+    Doctor::especialidad = especialidad;
+}
+
+Paciente *Doctor::getPPaciente() const {
+    return pPaciente;
+}
+
+void Doctor::setPPaciente(Paciente *pPaciente) {
+    Doctor::pPaciente = pPaciente;
+}

@@ -1,7 +1,5 @@
-
 #include<string>
 #include"Paciente.h"
-using::std::string;
 using namespace std;
 
 
