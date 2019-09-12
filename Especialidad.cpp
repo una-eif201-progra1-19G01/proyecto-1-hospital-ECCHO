@@ -11,7 +11,7 @@ Especialidad::Especialidad(int tamano, int cantidad, Especialidad **pEspecialida
     tamano= MAXIMA;
     pEspecialidad = new Especialidad *[tamano];
     cantidad = 0;
-    for (int i = 0; i < tamano; i++) {
+    for (int i = 0; i < tamano;i++) {
 
         pEspecialidad[i] = NULL;
     }

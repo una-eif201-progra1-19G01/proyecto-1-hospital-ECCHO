@@ -9,7 +9,7 @@ class Paciente;
 
 class Especialidad;
 
-class Doctor {
+class Doctor{
 
     int const MAXDOCTORES = 20;
 

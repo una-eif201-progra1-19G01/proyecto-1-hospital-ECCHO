@@ -9,7 +9,7 @@ Doctor::Doctor(Doctor **pDoctor, int cantidad, int tamano) : pDoctor(pDoctor), c
     tamano = MAXDOCTORES;
     pDoctor = new Doctor *[tamano];
     cantidad = 0;
-    for (int i = 0; i < tamano; i++) {
+    for (int i = 0; i <tamano; i++) {
 
         pDoctor[i] = NULL;
     }

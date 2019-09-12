@@ -9,7 +9,7 @@ class Cama;
 
 int const MAXIMOPABE = 10;
 
-class Pabellon {
+class Pabellon{
 
 private:
 

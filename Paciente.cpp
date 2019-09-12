@@ -106,7 +106,7 @@ char Paciente::getSexo() const {
 }
 
 void Paciente::setSexo(char sexo) {
-    Paciente::sexo = sexo;
+    Paciente::sexo =sexo;
 }
 
 //DIRECCION

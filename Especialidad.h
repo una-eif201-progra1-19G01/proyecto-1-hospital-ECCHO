@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const int MAXIMA = 10;
+const int MAXIMA =10;
 
 class Especialidad {
 

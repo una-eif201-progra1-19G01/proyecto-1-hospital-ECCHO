@@ -57,7 +57,7 @@ int Pabellon::getCantidad() const {
 }
 
 void Pabellon::setCantidad(int cantidad) {
-    Pabellon::cantidad = cantidad;
+    Pabellon::cantidad =cantidad;
 }
 
 int Pabellon::getTamano() const {

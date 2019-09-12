@@ -10,7 +10,7 @@ class Doctor;
 
 class Cama;
 
-int const MAXPACIENTE = 200;
+int const MAXPACIENTE =200;
 
 class Paciente {
 
