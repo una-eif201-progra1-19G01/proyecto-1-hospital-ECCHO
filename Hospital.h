@@ -10,6 +10,8 @@
 #include <iostream>
 #include <sstream>
 
+#include "Pabellon.h"
+
 using namespace std;
 
 class Hospital {
@@ -21,6 +23,9 @@ private:
     string pruebas;
 
     float masPruebas;
+
+    Pabellon pab = Pabellon();
+    Pabellon *pPabellon;
 
 public:
     Hospital();
@@ -39,11 +44,11 @@ public:
 
     void setMasPruebas(float masPruebas);
 
-    void getPabellon();
+    std::string getPabellon();
 
     void setPabellon();
 
-    void addPabellon();
+    void addPabellon(char genero);
 
     void eliminarPabellon();
 

@@ -6,7 +6,7 @@ private:
 	int especialidad[];
 public:
 	Especialidad();
-	Especialidad();
+	// Especialidad();
 
 	~Especialidad() {};
 

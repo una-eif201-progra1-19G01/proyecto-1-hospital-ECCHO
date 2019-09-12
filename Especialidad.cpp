@@ -5,5 +5,5 @@
 using::std::string;
 
 Especialidad::Especialidad() {}
-Especialidad::Especialidad() {}
-Especialidad::~Especialidad() {}
+// Especialidad::Especialidad() {}
+// Especialidad::~Especialidad() {}

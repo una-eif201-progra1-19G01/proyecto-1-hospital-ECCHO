@@ -7,7 +7,7 @@ using ::std::string;
 
 Cama::Cama() {
     setCodigo(" ");
-    setEstado();
+    setEstado("");
 }
 
 Cama::Cama(std::string codigo, bool estado) : codigo(codigo), estado(estado) {}
