@@ -195,7 +195,7 @@ string Paciente::tostring(){
 	p<<"paciente: "<<nombre<<"\n";
 	p<<"cedula: "<<cedula<<"\n";
 	p<<"cama: "<<getPCama()<<"\n";
-	
+	p<<"doctor: "<<getNombre()<<" "<<getApellido()<<"\n";
 	return p.str();
 }
 
