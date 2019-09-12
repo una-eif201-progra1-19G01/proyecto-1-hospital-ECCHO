@@ -1,5 +1,7 @@
 #include<string>
+#include <sstream>
 #include"Paciente.h"
+
 using namespace std;
 
 
@@ -8,15 +10,34 @@ Paciente::Paciente() {}
 Paciente::Paciente(const string &cedula, const string &nombre, const string &apellido, char sexo,
                    const string &direccion, const string &patologia, const string &tipoCirugia, const string &estado,
                    const string &prioridad, int fechaCirugia, Cama *pCama, Doctor *pDoctor) :
-                   cedula(cedula),nombre(nombre),apellido(apellido),sexo(sexo),direccion(direccion),patologia(patologia),
-                   tipoCirugia(tipoCirugia),estado(estado),prioridad(prioridad),fechaCirugia(fechaCirugia),
-                   pCama(pCama),pDoctor(pDoctor) {}
+        cedula(cedula), nombre(nombre), apellido(apellido), sexo(sexo), direccion(direccion), patologia(patologia),
+        tipoCirugia(tipoCirugia), estado(estado), prioridad(prioridad), fechaCirugia(fechaCirugia),
+        pCama(pCama), pDoctor(pDoctor) {}
 
 
 Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(pPaciente), cantidad(cantidad),
-                                                                     tamano(tamano) {}
-//Destructor
-Paciente::~Paciente() {}
+                                                                     tamano(tamano) {
+
+    tamano = MAXPACIENTE;
+    pPaciente = new Paciente *[tamano];
+    cantidad = 0;
+    for (int i = 0; i < tamano; i++) {
+
+        pPaciente[i] = NULL;
+
+    }
+
+
+}
+
+Paciente::~Paciente() {
+
+    for (int i = 0; i < tamano; i++) {
+
+        delete pPaciente[i];
+    }
+    delete[]pPaciente;
+}
 
 
 //PACIENTE
@@ -169,12 +190,12 @@ void Paciente::setPDoctor(Doctor *pDoctor) {
 }
 
 
-string paciente::tostring(){
+string Paciente::tostring(){
 	stringstream p;
 	p<<"paciente: "<<nombre<<"\n";
 	p<<"cedula: "<<cedula<<"\n";
-	p<<"cama: "<<cama<<"\n";
-	p<<"doctor: "<<doctor<<"\n";
+	p<<"cama: "<<getPCama()<<"\n";
+	p<<"doctor: "<<getNombre()<<" "<<getApellido()<<"\n";
 	return p.str();
 }
 

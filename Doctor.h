@@ -11,6 +11,9 @@ class Especialidad;
 
 class Doctor {
 
+    int const MAXDOCTORES = 20;
+
+
 private:
     Doctor **pDoctor;
     int cantidad;

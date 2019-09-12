@@ -10,6 +10,8 @@ class Doctor;
 
 class Cama;
 
+int const MAXPACIENTE = 200;
+
 class Paciente {
 
 private:
@@ -114,6 +116,7 @@ public:
 
     void setPDoctor(Doctor *pDoctor);
 
+    string tostring();
 };
 
 

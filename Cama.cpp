@@ -1,6 +1,4 @@
-#include<iostream>
 #include<string>
-#include<sstream>
 #include"Cama.h"
 
 using ::std::string;
