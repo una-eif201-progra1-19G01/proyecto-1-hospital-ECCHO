@@ -52,7 +52,7 @@ public:
 
     void setPPaciente(Paciente *pPaciente);
 
-	string tostring();
+	virtual string tostring();
 };
 
 #endif //DOCTOR_H
