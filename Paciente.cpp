@@ -169,6 +169,12 @@ void Paciente::setPDoctor(Doctor *pDoctor) {
 }
 
 
+string paciente::tostring(){
+	stringstream p;
+	p<<"paciente: "<<nombre<<"\n";
+	p<<"cedula: "<<cedula<<"\n";
+	return p.str();
+}
 
 
 
