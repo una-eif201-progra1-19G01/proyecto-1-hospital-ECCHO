@@ -173,6 +173,8 @@ string paciente::tostring(){
 	stringstream p;
 	p<<"paciente: "<<nombre<<"\n";
 	p<<"cedula: "<<cedula<<"\n";
+	p<<"cama: "<<cama<<"\n";
+	p<<"doctor: "<<doctor<<"\n";
 	return p.str();
 }
 
