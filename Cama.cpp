@@ -5,18 +5,52 @@
 
 using ::std::string;
 
-Cama::Cama() {
-    setCodigo(" ");
-    setEstado();
+Cama::Cama() {}
+
+Cama::Cama(int cantidad, int tamano, Cama **pCama) : cantidad(cantidad), tamano(tamano), pCama(pCama) {}
+
+Cama::Cama(const string &codigo, bool estado, Paciente *ePaciente) : codigo(codigo), estado(estado),
+                                                                     ePaciente(ePaciente) {}
+
+Cama::~Cama() {}
+
+int Cama::getCantidad() const {
+    return cantidad;
 }
 
-Cama::Cama(std::string codigo, bool estado) : codigo(codigo), estado(estado) {}
-
-Cama::~Cama() {
-
+int Cama::getTamano() const {
+    return tamano;
 }
 
-void Cama::setCodigo(std::string codigo) {
+Cama **Cama::getPCama() const {
+    return pCama;
+}
+
+const string &Cama::getCodigo() const {
+    return codigo;
+}
+
+bool Cama::isEstado() const {
+    return estado;
+}
+
+Paciente *Cama::getEPaciente() const {
+    return ePaciente;
+}
+
+void Cama::setCantidad(int cantidad) {
+    Cama::cantidad = cantidad;
+}
+
+void Cama::setTamano(int tamano) {
+    Cama::tamano = tamano;
+}
+
+void Cama::setPCama(Cama **pCama) {
+    Cama::pCama = pCama;
+}
+
+void Cama::setCodigo(const string &codigo) {
     Cama::codigo = codigo;
 }
 
@@ -24,12 +58,7 @@ void Cama::setEstado(bool estado) {
     Cama::estado = estado;
 }
 
-std::string Cama::getCodigo() {
-    return codigo;
+void Cama::setEPaciente(Paciente *ePaciente) {
+    Cama::ePaciente = ePaciente;
 }
-
-bool Cama::getEstado() {
-    return estado;
-}
-
 

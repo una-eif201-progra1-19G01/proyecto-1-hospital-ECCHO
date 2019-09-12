@@ -2,36 +2,52 @@
 #define CAMA_H
 
 #include <string>
+#include "Paciente.h"
+using namespace std;
+
+class Paciente;
 
 class Cama {
 private:
+    int cantidad;
+    int tamano;
+    Cama **pCama;
     std::string codigo;
     bool estado;
+    Paciente *ePaciente;
+
 public:
     Cama();
 
-    Cama(std::string, bool);
+    Cama(const string &codigo, bool estado, Paciente *ePaciente);
+
+    Cama(int cantidad, int tamano, Cama **pCama);
 
     virtual ~Cama();
 
-    void setCodigo(std::string);
+    int getCantidad() const;
 
-    void setEstado(bool);
+    int getTamano() const;
 
-    std::string getCodigo();
+    Cama **getPCama() const;
 
-    bool getEstado();
+    const string &getCodigo() const;
 
+    bool isEstado() const;
 
+    Paciente *getEPaciente() const;
 
+    void setCantidad(int cantidad);
 
+    void setTamano(int tamano);
 
+    void setPCama(Cama **pCama);
 
+    void setCodigo(const string &codigo);
 
+    void setEstado(bool estado);
 
-
-
-
+    void setEPaciente(Paciente *ePaciente);
 
 };
 #endif //CAMA_H
