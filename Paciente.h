@@ -56,42 +56,52 @@ public:
 
     void setTamano(int tamano);
 
+	//Cedula
     const std::string &getCedula() const;
 
     void setCedula(const std::string &cedula);
 
+	//Nombre
     const std::string &getNombre() const;
 
     void setNombre(const std::string &nombre);
 
+	//Apellido
     const std::string &getApellido() const;
 
     void setApellido(const std::string &apellido);
 
+	//Sexo
     char getSexo() const;
 
     void setSexo(char sexo);
 
+	//Direccion
     const std::string &getDireccion() const;
 
     void setDireccion(const std::string &direccion);
 
+	//Patologia
     const std::string &getPatologia() const;
 
     void setPatologia(const std::string &patologia);
 
+	//Tipo CIrugia
     const std::string &getTipoCirugia() const;
 
     void setTipoCirugia(const std::string &tipoCirugia);
 
+	//Estado
     const std::string &getEstado() const;
 
     void setEstado(const std::string &estado);
 
+	//Prioridad
     const std::string &getPrioridad() const;
 
     void setPrioridad(const std::string &prioridad);
 
+	//Fecha
     int getFechaCirugia() const;
 
     void setFechaCirugia(int fechaCirugia);
