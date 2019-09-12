@@ -6,15 +6,26 @@
 #include <iostream>
 using namespace std;
 
-void Hospital::getPabellon(){
-    cout << "PABELLON!!!\n";
+std::string Hospital::getPabellon(){
+    for (int i = 0; i < pab.getCantidad(); i++) {
+        std::cout << i << ": Género = " << pPabellon[i].getGenero();
+    }
 }
 
 void Hospital::setPabellon(){
 
 }
 
-void Hospital::addPabellon(){
+void Hospital::addPabellon(char genero){
+    if (pab.getCantidad() >= 10) {
+        //ERROR
+    } else {
+        int cantidad = pab.getCantidad();
+        pPabellon[cantidad] = Pabellon(genero);
+        
+        pab.setCantidad(cantidad+1);
+    }
+    
 
 }
 

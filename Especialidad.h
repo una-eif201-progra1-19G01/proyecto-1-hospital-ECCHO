@@ -3,7 +3,16 @@
 
 #include <iostream>
 #include <string>
+<<<<<<< HEAD
+class Especialidad {
+private:
+	int especialidad[];
+public:
+	Especialidad();
+	// Especialidad();
+=======
 using namespace std;
+>>>>>>> 0bc6962a387566443391c828bbbbe42171d6d423
 
 const int MAXIMA = 10;
 

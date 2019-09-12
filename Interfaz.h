@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Hospital.h"
+#include "Pabellon.h"
 
 class Interfaz
 {
@@ -19,5 +20,7 @@ class Interfaz
         void camas();
 
         Hospital hosp = Hospital();
+        // Pabellon pab = Pabellon();
+        // Pabellon *pPabellon;
 };
 #endif

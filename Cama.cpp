@@ -3,9 +3,16 @@
 
 using ::std::string;
 
+<<<<<<< HEAD
+Cama::Cama() {
+    setCodigo(" ");
+    setEstado("");
+}
+=======
 Cama::Cama() {}
 
 Cama::Cama(int cantidad, int tamano, Cama **pCama) : cantidad(cantidad), tamano(tamano), pCama(pCama) {}
+>>>>>>> 0bc6962a387566443391c828bbbbe42171d6d423
 
 Cama::Cama(const string &codigo, bool estado, Paciente *ePaciente) : codigo(codigo), estado(estado),
                                                                      ePaciente(ePaciente) {}

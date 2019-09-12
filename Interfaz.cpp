@@ -72,13 +72,13 @@ void Interfaz::pabellones(){
         hosp.getPabellon();
     }
     else if (opcionPabellon == 2){
-        hosp.addPabellon();
+        hosp.addPabellon('M'); //TODO: Cambiar esto
     }
     else if (opcionPabellon == 3){
-        hosp.eliminarPabellon();
+        // hosp.eliminarPabellon();
     }
     else if (opcionPabellon == 4){
-        hosp.setPabellon();
+        // hosp.setPabellon();
     }
     else{
         
