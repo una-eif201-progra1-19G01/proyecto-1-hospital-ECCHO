@@ -46,51 +46,296 @@ void Interfaz::correrInterfaz(){
 }
 
 void Interfaz::especialidades(){
+    int opcionEspecialidad = 0;
+    bool repetirEspecialidad = true;
 
+    while(repetirEspecialidad) {
+        cout << "*********************************\n";
+        cout << "Elija una Opción:\n";
+        cout << "1. Ver Doctores\n";
+        cout << "2. Añadir Doctor\n";
+        cout << "3. Eliminar Doctor\n";
+        cout << "4. Atras\n";
+        cout << "*********************************\n\n";
+
+        cout << "Opción: ";
+        cin >> opcionEspecialidad;
+
+        if (opcionEspecialidad == 1){
+                // Pabellon** mostrar = pab.getPPabellon();
+            
+                Pabellon** temp = pab.getPPabellon();
+                temp[1]->setId('A');
+
+                // tempPab2[0]->setId('A');
+                // std::cout << tempPab2[0]->getId();
+        }
+        else if (opcionEspecialidad == 2){
+                char iD;
+                string genero = "";
+
+                cout << "AGREGANDO PABELLÓN \n";
+                cout << "ID del Pabellón: ";
+                cin >> iD;
+
+                cout << "Género del Pabellón: ";
+                // getline(cin, genero);
+                cin >> genero;
+
+                Pabellon* tempPab = new Pabellon;
+
+                tempPab->setId(iD);
+                tempPab->setGenero(genero);
+
+                pab.agregar(tempPab);
+                pab.setCantidad(pab.getCantidad() + 1);
+        }
+        else if (opcionEspecialidad == 3){
+            int indice;
+
+            cout << "Seleccione el índice del pabellón que quiere eliminar: ";
+            cin >> indice;
+
+            pab.eliminar(indice);
+            pab.setCantidad(pab.getCantidad() - 1);
+        }
+        else{
+            repetirEspecialidad = false;
+        }
+    } 
 }
 
 void Interfaz::doctores(){
-    
+    int opcionDoctor = 0;
+    bool repetirDoctor = true;
+
+    while(repetirDoctor) {
+        cout << "*********************************\n";
+        cout << "Elija una Opción:\n";
+        cout << "1. Ver Doctores\n";
+        cout << "2. Añadir Doctor\n";
+        cout << "3. Eliminar Doctor\n";
+        cout << "4. Atras\n";
+        cout << "*********************************\n\n";
+
+        cout << "Opción: ";
+        cin >> opcionDoctor;
+
+        if (opcionDoctor == 1){
+                // Pabellon** mostrar = pab.getPPabellon();
+            
+                Pabellon** temp = pab.getPPabellon();
+                temp[1]->setId('A');
+
+                // tempPab2[0]->setId('A');
+                // std::cout << tempPab2[0]->getId();
+        }
+        else if (opcionDoctor == 2){
+                char iD;
+                string genero = "";
+
+                cout << "AGREGANDO PABELLÓN \n";
+                cout << "ID del Pabellón: ";
+                cin >> iD;
+
+                cout << "Género del Pabellón: ";
+                // getline(cin, genero);
+                cin >> genero;
+
+                Pabellon* tempPab = new Pabellon;
+
+                tempPab->setId(iD);
+                tempPab->setGenero(genero);
+
+                pab.agregar(tempPab);
+                pab.setCantidad(pab.getCantidad() + 1);
+        }
+        else if (opcionDoctor == 3){
+            int indice;
+
+            cout << "Seleccione el índice del pabellón que quiere eliminar: ";
+            cin >> indice;
+
+            pab.eliminar(indice);
+            pab.setCantidad(pab.getCantidad() - 1);
+        }
+        else{
+            repetirDoctor = false;
+        }
+    }   
 }
 
 void Interfaz::pabellones(){
     int opcionPabellon = 0;
+    bool repetirPabellon = true;
 
-    cout << "*********************************\n";
-    cout << "Elija una Opción:\n";
-    cout << "1. Ver Pabellones\n";
-    cout << "2. Añadir Pabellón\n";
-    cout << "3. Eliminar Pabellón\n";
-    cout << "4. Editar Pabellón\n";
-    cout << "5. Atras\n";
-    cout << "*********************************\n\n";
+    while (repetirPabellon) {
+        cout << "*********************************\n";
+        cout << "Elija una Opción:\n";
+        cout << "1. Ver Pabellones\n";
+        cout << "2. Añadir Pabellón\n";
+        cout << "3. Eliminar Pabellón\n";
+        cout << "4. Atras\n";
+        cout << "*********************************\n\n";
 
-    cout << "Opción: ";
-    cin >> opcionPabellon;
+        cout << "Opción: ";
+        cin >> opcionPabellon;
+    
+        if (opcionPabellon == 1){
+                std::cout << "TEST: " << pab.getPPabellon()[0]->getId() << '\n';
+                
+                std::cout << "TEST2: " << pab.getPPabellon()[0]->getCantidad() << '\n';
+        }
+        else if (opcionPabellon == 2){
+            char iD;
+            string genero = "";
 
-   // if (opcionPabellon == 1){
-     //   hosp.getPabellon();
-   // }
-   // else if (opcionPabellon == 2){
-    //    hosp.addPabellon('M'); //TODO: Cambiar esto
-   // }
-   // else if (opcionPabellon == 3){
-        // hosp.eliminarPabellon();
-   // }
-   // else if (opcionPabellon == 4){
-        // hosp.setPabellon();
-  //  }
-   // else{
-        
-   // }
+            cout << "AGREGANDO PABELLÓN \n";
+            cout << "ID del Pabellón: ";
+            cin >> iD;
+
+            cout << "Género del Pabellón: ";
+            // getline(cin, genero);
+            cin >> genero;
+
+            Pabellon* tempPab = new Pabellon;
+
+            tempPab->setId(iD);
+            tempPab->setGenero(genero);
+
+            pab.agregar(tempPab);
+
+            // int cantidad = pab.getCantidad();
+        }
+        else if (opcionPabellon == 3){
+            int indice;
+
+            cout << "Seleccione el índice del pabellón que quiere eliminar: ";
+            cin >> indice;
+
+            pab.eliminar(indice);
+            pab.setCantidad(pab.getCantidad() - 1);
+        }
+        else{
+            repetirPabellon = false;
+        }
+    }
 }
 
 
 void Interfaz::camas(){
+    int opcionCama = 0;
+    bool repetirCama = true;
+
+    while (repetirCama) {
+        cout << "*********************************\n";
+        cout << "Elija una Opción:\n";
+        cout << "1. Ver Camas\n";
+        cout << "2. Añadir Cama\n";
+        cout << "3. Eliminar Cama\n";
+        cout << "4. Atras\n";
+        cout << "*********************************\n\n";
+
+        cout << "Opción: ";
+        cin >> opcionCama;
     
+        if (opcionCama == 1){
+            // Cama** temp = pab.getPCama();
+        }
+        else if (opcionCama == 2){
+            char iD;
+            string genero = "";
+
+            cout << "AGREGANDO PABELLÓN \n";
+            cout << "ID del Pabellón: ";
+            cin >> iD;
+
+            cout << "Género del Pabellón: ";
+            // getline(cin, genero);
+            cin >> genero;
+
+            Pabellon* tempPab = new Pabellon;
+
+            tempPab->setId(iD);
+            tempPab->setGenero(genero);
+
+            pab.agregar(tempPab);
+            pab.setCantidad(pab.getCantidad() + 1);
+        }
+        else if (opcionCama == 3){
+            int indice;
+
+            cout << "Seleccione el índice del pabellón que quiere eliminar: ";
+            cin >> indice;
+
+            pab.eliminar(indice);
+            pab.setCantidad(pab.getCantidad() - 1);
+        }
+        else{
+            repetirCama = false;
+        }
+    }
 }
 
 void Interfaz::pacientes(){
+    int opcionPaciente = 0;
+    bool repetirPaciente = true;
+
+    while (repetirPaciente) {
+        cout << "*********************************\n";
+        cout << "Elija una Opción:\n";
+        cout << "1. Ver Pabellones\n";
+        cout << "2. Añadir Pabellón\n";
+        cout << "3. Eliminar Pabellón\n";
+        cout << "4. Atras\n";
+        cout << "*********************************\n\n";
+
+        cout << "Opción: ";
+        cin >> opcionPaciente;
     
+    
+
+        if (opcionPaciente == 1){
+                // Pabellon** mostrar = pab.getPPabellon();
+            
+                Pabellon** temp = pab.getPPabellon();
+                temp[1]->setId('A');
+
+                // tempPab2[0]->setId('A');
+                // std::cout << tempPab2[0]->getId();
+        }
+        else if (opcionPaciente == 2){
+                char iD;
+                string genero = "";
+
+                cout << "AGREGANDO PABELLÓN \n";
+                cout << "ID del Pabellón: ";
+                cin >> iD;
+
+                cout << "Género del Pabellón: ";
+                // getline(cin, genero);
+                cin >> genero;
+
+                Pabellon* tempPab = new Pabellon;
+
+                tempPab->setId(iD);
+                tempPab->setGenero(genero);
+
+                pab.agregar(tempPab);
+                pab.setCantidad(pab.getCantidad() + 1);
+        }
+        else if (opcionPaciente == 3){
+            int indice;
+
+            cout << "Seleccione el índice del pabellón que quiere eliminar: ";
+            cin >> indice;
+
+            pab.eliminar(indice);
+            pab.setCantidad(pab.getCantidad() - 1);
+        }
+        else{
+            repetirPaciente = false;
+        }
+    }
 }
 

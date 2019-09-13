@@ -15,7 +15,7 @@ private:
     std::string codigo;
     bool estado;
     Paciente *ePaciente;
-
+    int numero;
 public:
     Cama();
 
@@ -55,6 +55,7 @@ public:
 
 	string toStringCama();
 
+    bool getEstado();
 
 };
 #endif //CAMA_H

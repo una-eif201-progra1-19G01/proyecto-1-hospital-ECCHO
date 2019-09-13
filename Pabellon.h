@@ -61,6 +61,9 @@ public:
 
 	void agregar(Pabellon* pPa);
 
+    void eliminar(int indice);
+
+    string toStringPabellon();
 };
 
 #endif //PABELLON_H

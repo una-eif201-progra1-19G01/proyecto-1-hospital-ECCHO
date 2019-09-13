@@ -78,7 +78,7 @@ void Doctor::setPPaciente(Paciente *pPaciente) {
 }
 
 string Doctor::tostring() {
-    return std::__cxx11::string();
+    return std::string();
 }
 
 void Doctor::agregar(Doctor* pDoc) {

@@ -94,3 +94,7 @@ string Cama::toStringCama() {
 	}
 	return c.str();
 }
+
+bool Cama::getEstado() {
+	return estado;
+}

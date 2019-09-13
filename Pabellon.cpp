@@ -1,4 +1,5 @@
 #include"Pabellon.h"
+#include<sstream>
 
 using namespace std;
 
@@ -57,7 +58,7 @@ int Pabellon::getCantidad() const {
 }
 
 void Pabellon::setCantidad(int cantidad) {
-    Pabellon::cantidad =cantidad;
+    Pabellon::cantidad = cantidad;
 }
 
 int Pabellon::getTamano() const {
@@ -82,6 +83,22 @@ Pabellon::~Pabellon() {
 
 void Pabellon::agregar(Pabellon *pPa) {
 	pPabellon[cantidad++] = pPa;
+    Pabellon::cantidad = Pabellon::cantidad + 1;
+}
+
+void Pabellon::eliminar(int indice) {
+    pPabellon[indice] = nullptr;
+}
+
+string Pabellon::toStringPabellon() {
+    stringstream c;
+    c << "Pabellón por Código: \n";
+    for (int i = 0; i < cantidad; i++) {
+        c << "Codigo: ";
+        c << pPabellon[i]->getId();
+        c << pPabellon[i]->getGenero();
+    }
+    return c.str();
 }
 
 
