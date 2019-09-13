@@ -54,6 +54,8 @@ public:
 	Cama* buscarCama(string codigo);
 
 	string toStringCama();
+
+
 };
 #endif //CAMA_H
 
