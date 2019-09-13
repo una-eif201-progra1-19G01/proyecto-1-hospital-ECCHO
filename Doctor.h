@@ -59,6 +59,14 @@ public:
 
 	void agregar(Doctor* pDoc);
 
+	virtual void modificarArreglo(string,string);
+
+    void setPacientes(Paciente* x);
+
+    void setDoctorPA(Paciente* x);
+
+    // virtual arreglopaciente* obtenerArreglo();
+
 };
 
 #endif //DOCTOR_H

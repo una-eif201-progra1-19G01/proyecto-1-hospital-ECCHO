@@ -63,7 +63,16 @@ public:
 
     void eliminar(int indice);
 
-    string toStringPabellon();
+	Pabellon *buscarPabellon(char iDENTIFICAR, string generos);
+
+	string verCamasPorEstado();
+
+	string datosPabellon();
+
+	string toString();
+
+	string imprimeDisponiblidadDeCamas();
+
 };
 
 #endif //PABELLON_H

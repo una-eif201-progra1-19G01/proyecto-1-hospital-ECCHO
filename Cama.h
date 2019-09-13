@@ -55,8 +55,13 @@ public:
 
 	string toStringCama();
 
-    bool getEstado();
+	void eliminarCama(Cama* pCam);
 
+    void cambiarCama(string codex);
+
+    string disponibilidad();
+
+    string toString();
 };
 #endif //CAMA_H
 

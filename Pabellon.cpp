@@ -1,3 +1,4 @@
+#include <sstream>
 #include"Pabellon.h"
 #include<sstream>
 
@@ -14,9 +15,9 @@ Pabellon::Pabellon(int cantidad, int tamano, Pabellon **pPabellon) : cantidad(ca
     tamano = MAXIMOPABE;
     pPabellon = new Pabellon *[tamano];
     cantidad = 0;
-    for (int i = 0; i < tamano; i++){
+    for (int i = 0; i < tamano; i++) {
 
-        pPabellon[i]=NULL;
+        pPabellon[i] = NULL;
     }
 }
 
@@ -78,27 +79,87 @@ void Pabellon::setPPabellon(Pabellon **pPabellon) {
 }
 
 Pabellon::~Pabellon() {
-	delete[] pPabellon;
+    delete[] pPabellon;
 }
 
 void Pabellon::agregar(Pabellon *pPa) {
 	pPabellon[cantidad++] = pPa;
-    Pabellon::cantidad = Pabellon::cantidad + 1;
 }
 
 void Pabellon::eliminar(int indice) {
     pPabellon[indice] = nullptr;
 }
 
-string Pabellon::toStringPabellon() {
-    stringstream c;
-    c << "Pabellón por Código: \n";
+Pabellon *Pabellon::buscarPabellon(char iDENTIFICAR, string generos) {
+
     for (int i = 0; i < cantidad; i++) {
-        c << "Codigo: ";
-        c << pPabellon[i]->getId();
-        c << pPabellon[i]->getGenero();
+        if (pPabellon[i]->getId() == iDENTIFICAR && pPabellon[i]->getGenero() == generos)
+            return pPabellon[i];
     }
+}
+
+string Pabellon::verCamasPorEstado() {
+
+    stringstream c;
+    c << "Datos de cada pabellon clasificado por genero:    " << endl;
+    c << "Pabellones de mujeres:  ";
+    for (int i = 0; i < cantidad; i++) {
+        if (pPabellon[i]->getGenero() == "Femenino") {
+
+            c << pPabellon[i]->getPCama()->disponibilidad();
+        }
+    }
+    c << "Pabellones de hombres:   ";
+    for (int i = 0; i < cantidad; i++)
+        if (pPabellon[i]->getGenero() == "Masculino") {
+            c << pPabellon[i]->getPCama()->disponibilidad();
+        }
+
+
     return c.str();
 }
+
+string Pabellon::datosPabellon() {
+
+    stringstream j;
+    j << "Letra del pabellon: " << iD << "\n";
+    j << "Género dek pabellon: " << genero << "\n";
+    j << "Numero de camas en el pabellon: " << numCamas << "\n\n";
+    j << pCama->toStringCama();
+    return j.str();
+}
+
+string Pabellon::toString() {
+
+    stringstream s;
+    s << "Datos del pabellon por genero:" << "\n";
+    s << "Pabellones Femeninos: " << "\n";
+    for (int i = 0; i < cantidad; i++) {
+        if (pPabellon[i]->getGenero() == "femenino") {
+            s << pPabellon[i]->toString();
+        }
+    }
+    s << "Pabellones Masculinos: " << "\n";
+    for (int i = 0; i < cantidad; i++) {
+        if (pPabellon[i]->getGenero() == "masculino") {
+            s << pPabellon[i]->toString();
+        }
+    }
+    return s.str();
+}
+
+string Pabellon::imprimeDisponiblidadDeCamas() {
+
+    stringstream n;
+    n<<"Letra asociada al pabellon: "<<iD<<"\n";
+    n<<"Género asociado al pabellon: "<<genero<<"\n";
+    n<<pCama->disponibilidad();
+    return n.str();
+
+    //return std::__cxx11::string();
+}
+
+
+
 
 

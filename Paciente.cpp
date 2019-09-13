@@ -27,7 +27,6 @@ Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(p
 
     }
 
-
 }
 
 Paciente::~Paciente() {
@@ -191,13 +190,33 @@ void Paciente::setPDoctor(Doctor *pDoctor) {
 
 
 string Paciente::tostring(){
-	stringstream p;
-	p<<"paciente: "<<nombre<<"\n";
-	p<<"cedula: "<<cedula<<"\n";
-	p<<"cama: "<<"\n";
-	p<<"doctor: "<<"\n";
-	return p.str();
+	stringstream a;
+	a<<"Paciente: "<<nombre<<" "<<apellido;
+	a<<"Cedula: "<<cedula<<"\n";
+	a<< "Sexo: " << sexo<<"\n";
+	a<< "Direccion: " << direccion << "\n";
+	a<< "Patologia: " << patologia << "\n";
+	a<< "Tipo de Cirugia: " << patologia <<"\n";
+	a<< "Estado: " << estado << "\n";
+	a<< "Prioridad: " << prioridad << "\n";
+	a<< "Fecha de Cirugia" << fechaCirugia << "\n";
+	if (pCama != NULL) {
+		a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
+	}
+	else {
+		a << "Cama asignada al Paciente: " << pCama << "\n";
+	}
+	a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
+	a << "Doctor asignado al Paciente: " << pDoctor << "\n";
+
+	return a.str();
 }
+
+void Paciente::cambiarCama(Cama* nuevaCama) {
+	pCama->setEPaciente(NULL);
+	pCama = nuevaCama;
+}
+
 
 
 
