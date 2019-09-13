@@ -27,7 +27,6 @@ Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(p
 
     }
 
-
 }
 
 Paciente::~Paciente() {

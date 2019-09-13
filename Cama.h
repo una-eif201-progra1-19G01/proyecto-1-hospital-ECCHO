@@ -54,6 +54,14 @@ public:
 	Cama* buscarCama(string codigo);
 
 	string toStringCama();
+
+	void eliminarCama(Cama* pCam);
+
+    void cambiarCama(string codex);
+
+    string disponibilidad();
+
+    string toString();
 };
 #endif //CAMA_H
 

@@ -61,6 +61,16 @@ public:
 
 	void agregar(Pabellon* pPa);
 
+	Pabellon *buscarPabellon(char iDENTIFICAR, string generos);
+
+	string verCamasPorEstado();
+
+	string datosPabellon();
+
+	string toString();
+
+	string imprimeDisponiblidadDeCamas();
+
 };
 
 #endif //PABELLON_H
