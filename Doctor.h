@@ -4,10 +4,8 @@
 #include <string>
 #include "Paciente.h"
 #include "Especialidad.h"
-
-class Paciente;
-
-class Especialidad;
+#include <sstream>
+using namespace std;
 
 class Doctor{
 
@@ -15,57 +13,28 @@ class Doctor{
 
 
 private:
-    Doctor **pDoctor;
     int cantidad;
-    int tamano;
-    std::string nombre;
-    std::string especialidad;
-    Paciente *pPaciente;
-
+    string nombre;
+    Especialidad *especi;
+    Paciente **vecPacientes;
+		
 
 public:
 
-    Doctor(Doctor **pDoctor, int cantidad, int tamano);
+    Doctor();
 
-    Doctor(const std::string &nombre, const std::string &especialidad, Paciente *pPaciente);
+    Doctor(string ,especialidad*);
 
     virtual ~Doctor();
-
-    Doctor **getPDoctor() const;
-
-    void setPDoctor(Doctor **pDoctor);
-
-    int getCantidad() const;
-
-    void setCantidad(int cantidad);
-
-    int getTamano() const;
-
-    void setTamano(int tamano);
-
-    const std::string &getNombre() const;
-
-    void setNombre(const std::string &nombre);
-
-    const std::string &getEspecialidad() const;
-
-    void setEspecialidad(const std::string &especialidad);
-
-    Paciente *getPPaciente() const;
-
-    void setPPaciente(Paciente *pPaciente);
-
-	virtual string tostring();
-
-	void agregar(Doctor* pDoc);
-
-	virtual void modificarArreglo(string,string);
-
-    void setPacientes(Paciente* x);
-
-    void setDoctorPA(Paciente* x);
-
-    // virtual arreglopaciente* obtenerArreglo();
+    int getCantidad();
+    string getNombre();
+    void setNombre(string nombre);
+    especialidad* getEspecialidad();
+    void setEspecialidad(especialidad*);
+    Paciente *buscarPaciente(string cedula);
+	string tostring();
+	void agregarPaciente(Paciente*);
+	bool eliminarPaciente(int);
 
 };
 
