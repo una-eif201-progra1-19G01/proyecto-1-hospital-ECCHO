@@ -213,7 +213,7 @@ string Paciente::tostring(){
 }
 
 void Paciente::cambiarCama(Cama* nuevaCama) {
-	pCama->setPaciente(NULL);
+	pCama->setEPaciente(NULL);
 	pCama = nuevaCama;
 }
 
