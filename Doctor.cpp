@@ -1,103 +1,71 @@
 #include<string>
 #include"Doctor.h"
 
-using namespace std;
 
 
-Doctor::Doctor(Doctor **pDoctor, int cantidad, int tamano) : pDoctor(pDoctor), cantidad(cantidad), tamano(tamano) {
 
-    tamano = MAXDOCTORES;
-    pDoctor = new Doctor *[tamano];
-    cantidad = 0;
-    for (int i = 0; i <tamano; i++) {
+Doctor::Doctor(){
+	cantidad=0;
+	nombre="";
+	especialidad=NULL;
+	for(int i=0;i<20;i++){
+		vecPacientes[i]=NULL;
+	}
+}
 
-        pDoctor[i] = NULL;
+Doctor::Doctor(string nom,especialidad* espec)  {
+	 nombre=nom;
+	 especi=espec;
+	 cantidad=0;
+    for (int i = 0; i <20; i++) {
+        vecPacientes[i] = NULL;
     }
 }
 
-Doctor::Doctor(const string &nombre, const string &especialidad, Paciente *pPaciente) : nombre(nombre),
-                                                                                        especialidad(especialidad),
-                                                                                        pPaciente(pPaciente) {}
-
 Doctor::~Doctor() {
 
-    tamano = MAXDOCTORES;
-    for (int i = 0; i < tamano; i++){
+    for (int i = 0; i < cantidad; i++){
 
         delete pDoctor[i];
     }
     delete []pDoctor;
+	}
+    int getCantidad(){
+		return cantidad;
+	}
+    string getNombre(){
+		return nombre;
+	}
+    void setNombre(string nombre nuevo){
+		nombre=nuevo;
+	}
+    especialidad* getEspecialidad(){
+		return especialdad;
+	}
+    void setEspecialidad(especialidad* nueva){
+		especi=nueva;
+	}
+    Paciente *buscarPaciente(string cedula){
+	Paciente* retorno=NULL;
+		for(int i=0; i<cantidad;i++){
+			if(vecPacientes[i]->)
+		}
+	}
+	string tostring();
+	void agregarPaciente(Paciente* nuevo){
+		if(cantidad>20){
+			vecPacientes[cantidad]=nuevo;
+			cantidad++;
+		}
+	}
+	boolean eliminarPaciente(int numCedula){
+		boolean resultado=false;
+		for(int i=0; i<20; i++){
+			if(vecPacientes[i]->)
+{
+
 }
 
-Doctor **Doctor::getPDoctor() const {
-    return pDoctor;
-}
-
-void Doctor::setPDoctor(Doctor **pDoctor) {
-    Doctor::pDoctor = pDoctor;
-}
-
-int Doctor::getCantidad() const {
-    return cantidad;
-}
-
-void Doctor::setCantidad(int cantidad) {
-    Doctor::cantidad = cantidad;
-}
-
-int Doctor::getTamano() const {
-    return tamano;
-}
-
-void Doctor::setTamano(int tamano) {
-    Doctor::tamano = tamano;
-}
-
-const string &Doctor::getNombre() const {
-    return nombre;
-}
-
-void Doctor::setNombre(const string &nombre) {
-    Doctor::nombre = nombre;
-}
-
-const string &Doctor::getEspecialidad() const {
-    return especialidad;
-}
-
-void Doctor::setEspecialidad(const string &especialidad) {
-    Doctor::especialidad = especialidad;
-}
-
-Paciente *Doctor::getPPaciente() const {
-    return pPaciente;
-}
-
-void Doctor::setPPaciente(Paciente *pPaciente) {
-    Doctor::pPaciente = pPaciente;
-}
-
-string Doctor::tostring() {
-    return std::__cxx11::string();
-}
-
-void Doctor::agregar(Doctor* pDoc) {
-	pDoctor[cantidad++] = pDoc;
-}
-
-void doctor::setPaciente(){
-    
-} 
-
-void doctor::setPacientes(paciente* x){
-    nuevo->agregar(x);
-    this->setDoctorPA(x);
-}
-
-arregloPacientes* doctor::getPacientes(){
-    return nuevo;
-}
-
-void doctor::setDoctorPA(paciente* x){
-    x->setDoctor(this);
-}
+		}
+	
+	}
