@@ -84,3 +84,20 @@ string Doctor::tostring() {
 void Doctor::agregar(Doctor* pDoc) {
 	pDoctor[cantidad++] = pDoc;
 }
+
+void doctor::setPaciente(){
+    
+} 
+
+void doctor::setPacientes(paciente* x){
+    nuevo->agregar(x);
+    this->setDoctorPA(x);
+}
+
+arregloPacientes* doctor::getPacientes(){
+    return nuevo;
+}
+
+void doctor::setDoctorPA(paciente* x){
+    x->setDoctor(this);
+}
