@@ -27,7 +27,6 @@ Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(p
 
     }
 
-
 }
 
 Paciente::~Paciente() {
@@ -214,7 +213,7 @@ string Paciente::tostring(){
 }
 
 void Paciente::cambiarCama(Cama* nuevaCama) {
-	pCama->setPaciente(NULL);
+	pCama->setEPaciente(NULL);
 	pCama = nuevaCama;
 }
 
