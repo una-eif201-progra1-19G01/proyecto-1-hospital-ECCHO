@@ -117,6 +117,8 @@ public:
     void setPDoctor(Doctor *pDoctor);
 
     string tostring();
+
+	void cambiarCama(Cama*)
 };
 
 
