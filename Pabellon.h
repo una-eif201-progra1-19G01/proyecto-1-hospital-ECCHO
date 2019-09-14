@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Cama.h"
+#include "arregloCama.h"
 
 
 class Cama;
@@ -16,32 +17,15 @@ private:
     char iD;
     string genero;
     int numCamas;
-    Cama *pCama;
-    int cantidad;
-    int tamano;
-    Pabellon **pPabellon;
+    arregloCama *pCama;
+
 
 public:
 
-    Pabellon(char iD, const string &genero, int numCamas, Cama *pCama);
-
-    Pabellon(int cantidad, int tamano, Pabellon **pPabellon);
+    Pabellon(char iD, const string &genero, int numCamas, arregloCama*pCama);
 
     Pabellon();
 
-    int getCantidad() const;
-
-    void setCantidad(int cantidad);
-
-    int getTamano() const;
-
-    void setTamano(int tamano);
-
-    Pabellon **getPPabellon() const;
-
-    void setPPabellon(Pabellon **pPabellon);
-
-    virtual ~Pabellon();
 
     char getId() const;
 
@@ -49,7 +33,7 @@ public:
 
     int getNumCamas() const;
 
-    Cama *getPCama() const;
+    arregloCama *getPCama() const;
 
     void setId(char iD);
 
@@ -57,21 +41,17 @@ public:
 
     void setNumCamas(int numCamas);
 
-    void setPCama(Cama *pCama);
-
-	void agregar(Pabellon* pPa);
-
-    void eliminar(int indice);
-
-	Pabellon *buscarPabellon(char iDENTIFICAR, string generos);
-
-	string verCamasPorEstado();
-
-	string datosPabellon();
+    void setPCama(arregloCama *pCama);
 
 	string toString();
 
 	string imprimeDisponiblidadDeCamas();
+
+	void cambiarCamas(string);
+
+	void modificarCama(char, int);
+
+
 
 };
 

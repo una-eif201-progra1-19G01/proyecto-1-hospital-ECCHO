@@ -1,71 +1,61 @@
 #include<string>
+#include <sstream>
 #include"Doctor.h"
 
 
+using namespace std;
 
 
-Doctor::Doctor(){
-	cantidad=0;
-	nombre="";
-	especialidad=NULL;
-	for(int i=0;i<20;i++){
-		vecPacientes[i]=NULL;
-	}
-}
+Doctor::Doctor(const string &nombre, const string &especialidad, arregloPaciente *pPaciente) : nombre(nombre),
+                                                                                               especialidad(
+                                                                                                       especialidad),
+                                                                                               pPaciente(pPaciente) {
 
-Doctor::Doctor(string nom,especialidad* espec)  {
-	 nombre=nom;
-	 especi=espec;
-	 cantidad=0;
-    for (int i = 0; i <20; i++) {
-        vecPacientes[i] = NULL;
-    }
+    pPaciente = new arregloPaciente();
 }
 
 Doctor::~Doctor() {
+}
 
-    for (int i = 0; i < cantidad; i++){
+const string &Doctor::getNombre() const {
+    return nombre;
+}
 
-        delete pDoctor[i];
-    }
-    delete []pDoctor;
-	}
-    int getCantidad(){
-		return cantidad;
-	}
-    string getNombre(){
-		return nombre;
-	}
-    void setNombre(string nombre nuevo){
-		nombre=nuevo;
-	}
-    especialidad* getEspecialidad(){
-		return especialdad;
-	}
-    void setEspecialidad(especialidad* nueva){
-		especi=nueva;
-	}
-    Paciente *buscarPaciente(string cedula){
-	Paciente* retorno=NULL;
-		for(int i=0; i<cantidad;i++){
-			if(vecPacientes[i]->)
-		}
-	}
-	string tostring();
-	void agregarPaciente(Paciente* nuevo){
-		if(cantidad>20){
-			vecPacientes[cantidad]=nuevo;
-			cantidad++;
-		}
-	}
-	boolean eliminarPaciente(int numCedula){
-		boolean resultado=false;
-		for(int i=0; i<20; i++){
-			if(vecPacientes[i]->)
-{
+void Doctor::setNombre(const string &nombre) {
+    Doctor::nombre = nombre;
+}
+
+const string &Doctor::getEspecialidad() const {
+    return especialidad;
+}
+
+void Doctor::setEspecialidad(const string &especialidad) {
+    Doctor::especialidad = especialidad;
+}
+
+arregloPaciente *Doctor::getPPaciente() const {
+    return pPaciente;
+}
+
+void Doctor::setPPaciente(arregloPaciente *pPaciente) {
+    Doctor::pPaciente = pPaciente;
+}
+
+string Doctor::tostring() {
+
+    stringstream p;
+    p << "Doctor: " << nombre << "\n";
+    p << "Especialidad: " << especialidad << "\n";
+    p << "Pacientes asignados: " << "\n";
+    p << pPaciente->toString();
+    return p.str();
+}
+
+void Doctor::modificarArray(string nombreDoc) {
+    Paciente *otroPaciente = NULL;
+    otroPaciente = new Paciente();
+    otroPaciente->setNombre(nombreDoc);
+    pPaciente->agregaPacientes(otroPaciente);
 
 }
 
-		}
-	
-	}

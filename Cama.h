@@ -9,27 +9,17 @@ class Paciente;
 
 class Cama {
 private:
-    int cantidad;
-    int tamano;
-    Cama **pCama;
+
     std::string codigo;
     bool estado;
     Paciente *ePaciente;
-    int numero;
+
 public:
     Cama();
 
     Cama(const string &codigo, bool estado, Paciente *ePaciente);
 
-    Cama(int cantidad, int tamano, Cama **pCama);
-
     virtual ~Cama();
-
-    int getCantidad() const;
-
-    int getTamano() const;
-
-    Cama **getPCama() const;
 
     const string &getCodigo() const;
 
@@ -37,29 +27,11 @@ public:
 
     Paciente *getEPaciente() const;
 
-    void setCantidad(int cantidad);
-
-    void setTamano(int tamano);
-
-    void setPCama(Cama **pCama);
-
     void setCodigo(const string &codigo);
 
     void setEstado(bool estado);
 
     void setEPaciente(Paciente *ePaciente);
-
-	void agregar(Cama* pCam);
-
-	Cama* buscarCama(string codigo);
-
-	string toStringCama();
-
-	void eliminarCama(Cama* pCam);
-
-    void cambiarCama(string codex);
-
-    string disponibilidad();
 
     string toString();
 };

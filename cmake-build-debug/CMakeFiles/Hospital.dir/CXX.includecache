@@ -1,0 +1,114 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Cama.h
+string
+-
+Paciente.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Paciente.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Doctor.h
+string
+-
+arregloPaciente.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloPaciente.h
+Especialidad.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Especialidad.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Especialidad.h
+iostream
+-
+string
+-
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Hospital.h
+cstdint
+-
+string
+-
+iostream
+-
+sstream
+-
+arregloCama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloCama.h
+arregloPaciente.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloPaciente.h
+arregloDoctor.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloDoctor.h
+arregloPabellon.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloPabellon.h
+arregloEspecialidad.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloEspecialidad.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Interfaz.cpp
+Interfaz.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Interfaz.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Interfaz.h
+iostream
+-
+Hospital.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Hospital.h
+Pabellon.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Pabellon.h
+Cama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Cama.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Pabellon.h
+string
+-
+Cama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Cama.h
+arregloCama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloCama.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Paciente.h
+string
+-
+Cama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Cama.h
+Doctor.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Doctor.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloCama.h
+Cama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Cama.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloDoctor.h
+Doctor.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Doctor.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloEspecialidad.h
+Especialidad.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Especialidad.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloPabellon.h
+arregloCama.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloCama.h
+Pabellon.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Pabellon.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/arregloPaciente.h
+iostream
+-
+sstream
+-
+string
+-
+Paciente.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Paciente.h
+Doctor.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Doctor.h
+
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/main.cpp
+iostream
+-
+Interfaz.h
+C:/Users/Lady Asura III/Desktop/proyecto-1-hospital-indiviudal-meli99-master/Interfaz.h
+

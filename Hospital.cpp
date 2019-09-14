@@ -4,65 +4,117 @@
 
 #include "Hospital.h"
 #include <iostream>
+
+
+
 using namespace std;
-
-std::string Hospital::getPabellon(){
-    for (int i = 0; i < pab.getCantidad(); i++) {
-        std::cout << i << ": Género = " << pPabellon[i].getGenero();
-    }
-    return 0;
-}
-
-void Hospital::setPabellon(){
-
-}
-
-// ***************REVISAR ESTE METODO******************
-//void Hospital::addPabellon(char genero){
-  //  if (pab.getCantidad() >= 10) {
-        //ERROR
-    //} else {
-      //  int cantidad = pab.getCantidad();
-        //pPabellon[cantidad] = Pabellon(genero);
-        
-        //pab.setCantidad(cantidad+1);
-    //}
-    
-
-///}
-
-void Hospital::eliminarPabellon(){
-
-}
-
 
 Hospital::Hospital() {
 
 }
 
-Hospital::Hospital(int id, const string &pruebas, float masPruebas) : id(id), pruebas(pruebas),
-                                                                      masPruebas(masPruebas) {}
-
-int Hospital::getId() const {
-    return id;
+Hospital::Hospital(arregloPaciente *elPaciente, arregloCama *laCama, arregloDoctor *elDoctor,
+                   arregloEspecialidad *laEspecialidad, arregloPabellon *elPabellon) : elPaciente(elPaciente),
+                                                                                       laCama(laCama),
+                                                                                       elDoctor(elDoctor),
+                                                                                       laEspecialidad(laEspecialidad),
+                                                                                       elPabellon(elPabellon) {
+    elPaciente = new arregloPaciente();
+    laCama = new arregloCama();
+    elDoctor = new arregloDoctor();
+    laEspecialidad = new arregloEspecialidad();
+    elPabellon = new arregloPabellon();
 }
 
-void Hospital::setId(int id) {
-    Hospital::id = id;
+Pabellon *Hospital::buscarPabellon(char iD, string genero) {
+    return elPabellon->encuentraPabellon(iD,genero);
 }
 
-const string &Hospital::getPruebas() const {
-    return pruebas;
+Doctor *Hospital::buscarDoctor(string buscaDoctor) {
+
+    return elDoctor->buscarcarDoctor(buscaDoctor);
 }
 
-void Hospital::setPruebas(const string &pruebas) {
-    Hospital::pruebas = pruebas;
+void Hospital::agregarPabellon(Pabellon * nuevoPabe) {
+    elPabellon->agregarPabellones(nuevoPabe);
+
 }
 
-float Hospital::getMasPruebas() const {
-    return masPruebas;
+void Hospital::agregarDoctor(Doctor * nuevoDoctor) {
+    elDoctor->agregarDoc(nuevoDoctor);
+
 }
 
-void Hospital::setMasPruebas(float masPruebas) {
-    Hospital::masPruebas = masPruebas;
+void Hospital::agregarEspecialidad(Especialidad *nuevaEspecial) {
+    laEspecialidad->agregarEspecialidad(nuevaEspecial);
+
 }
+
+void Hospital::agregarPaciente(Paciente *nuevoPaciente) {
+    elPaciente->agregaPacientes(nuevoPaciente);
+
+}
+
+void Hospital::eliminarDoctor(Doctor *adiosDoctor) {
+    elDoctor->eliminarDoc(adiosDoctor);
+
+}
+
+void Hospital::eliminarCamas(Cama *adiosCama) {
+    laCama->eliminarCama(adiosCama);
+
+}
+
+string Hospital::muestraPabellon() {
+
+    return elPabellon->toString();
+}
+
+string Hospital::muestraDoctor() {
+    return elDoctor->imprimirDatosDoctor();
+}
+
+string Hospital::muestraPaciente() {
+    return elPaciente->toString();
+}
+
+string Hospital::mostrarEspecialidad() {
+    return laEspecialidad->toString();
+}
+
+bool Hospital::compara(string comparaEstaEspecialidad) {
+    return laEspecialidad->compararNombresDeEspecialidades(comparaEstaEspecialidad);
+}
+
+Cama *Hospital::buscarCama(string buscaEstaCama) {
+    return laCama->buscarCama(buscaEstaCama);
+}
+
+void Hospital::cambiarCama(string cambiaEstaCama) {
+    laCama->cambiarCama(cambiaEstaCama);
+
+}
+
+bool Hospital::agregarEspecialidadAlDoctor(Especialidad *especial) {
+
+    return laEspecialidad->compararNombresDeEspecialidades(especial->getEspecialidad());
+}
+
+Hospital::~Hospital() {
+
+    delete laCama;
+    delete laEspecialidad;
+    delete elPaciente;
+    delete elDoctor;
+    delete elPabellon;
+}
+
+
+
+
+
+
+
+
+
+

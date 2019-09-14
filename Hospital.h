@@ -9,48 +9,48 @@
 #include <string>
 #include <iostream>
 #include <sstream>
-
-#include "Pabellon.h"
+#include "arregloCama.h"
+#include "arregloPaciente.h"
+#include "arregloDoctor.h"
+#include "arregloPabellon.h"
+#include "arregloEspecialidad.h"
 
 using namespace std;
 
 class Hospital {
 
 private:
-
-    int id;
-
-    string pruebas;
-
-    float masPruebas;
-
-    Pabellon pab = Pabellon();
-    Pabellon *pPabellon;
+    arregloPaciente* elPaciente;
+    arregloCama* laCama;
+    arregloDoctor* elDoctor;
+    arregloEspecialidad* laEspecialidad;
+    arregloPabellon* elPabellon;
 
 public:
     Hospital();
 
-    Hospital(int id, const string &pruebas, float masPruebas);
+    Hospital(arregloPaciente *elPaciente, arregloCama *laCama, arregloDoctor *elDoctor,
+             arregloEspecialidad *laEspecialidad, arregloPabellon *elPabellon);
 
-    int getId() const;
+    Pabellon *buscarPabellon(char, string);
+    Doctor *buscarDoctor(string);
+    void agregarPabellon(Pabellon*);
+    void agregarDoctor(Doctor*);
+    void agregarEspecialidad(Especialidad*);
+    void agregarPaciente(Paciente*);
+    void eliminarDoctor(Doctor*);
+    void eliminarCamas(Cama*);
+    string muestraPabellon();
+    string muestraDoctor();
+    string muestraPaciente();
+    string mostrarEspecialidad();
+    bool compara(string);
+    Cama*buscarCama(string);
+    void cambiarCama(string);
+    bool agregarEspecialidadAlDoctor(Especialidad*);
 
-    void setId(int id);
 
-    const string &getPruebas() const;
-
-    void setPruebas(const string &pruebas);
-
-    float getMasPruebas() const;
-
-    void setMasPruebas(float masPruebas);
-
-    std::string getPabellon();
-
-    void setPabellon();
-
-    void addPabellon(char genero);
-
-    void eliminarPabellon();
+    virtual ~Hospital();
 
 };
 

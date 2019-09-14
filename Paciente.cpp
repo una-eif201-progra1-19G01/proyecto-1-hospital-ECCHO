@@ -15,58 +15,8 @@ Paciente::Paciente(const string &cedula, const string &nombre, const string &ape
         pCama(pCama), pDoctor(pDoctor) {}
 
 
-Paciente::Paciente(Paciente **pPaciente, int cantidad, int tamano) : pPaciente(pPaciente), cantidad(cantidad),
-                                                                     tamano(tamano) {
+Paciente::~Paciente() {}
 
-    tamano = MAXPACIENTE;
-    pPaciente = new Paciente *[tamano];
-    cantidad = 0;
-    for (int i = 0; i < tamano; i++) {
-
-        pPaciente[i] = NULL;
-
-    }
-
-}
-
-Paciente::~Paciente() {
-
-    for (int i = 0; i < tamano; i++) {
-
-        delete pPaciente[i];
-    }
-    delete[]pPaciente;
-}
-
-
-//PACIENTE
-
-Paciente **Paciente::getPPaciente() const {
-    return pPaciente;
-}
-
-void Paciente::setPPaciente(Paciente **pPaciente) {
-    Paciente::pPaciente = pPaciente;
-}
-
-//CANTIDAD
-int Paciente::getCantidad() const {
-    return cantidad;
-}
-
-void Paciente::setCantidad(int cantidad) {
-    Paciente::cantidad = cantidad;
-}
-
-//TAMANO
-
-int Paciente::getTamano() const {
-    return tamano;
-}
-
-void Paciente::setTamano(int tamano) {
-    Paciente::tamano = tamano;
-}
 
 //CEDULA
 
@@ -105,7 +55,7 @@ char Paciente::getSexo() const {
 }
 
 void Paciente::setSexo(char sexo) {
-    Paciente::sexo =sexo;
+    Paciente::sexo = sexo;
 }
 
 //DIRECCION
@@ -168,7 +118,7 @@ void Paciente::setFechaCirugia(int fechaCirugia) {
     Paciente::fechaCirugia = fechaCirugia;
 }
 
-//VECTOR DE CAMAS
+//VECTOR DE CAMAS de paciente
 
 Cama *Paciente::getPCama() const {
     return pCama;
@@ -178,7 +128,7 @@ void Paciente::setPCama(Cama *pCama) {
     Paciente::pCama = pCama;
 }
 
-//VECTOR DE DOCTOR
+//VECTOR DE DOCTOR de paciente
 
 Doctor *Paciente::getPDoctor() const {
     return pDoctor;
@@ -189,33 +139,63 @@ void Paciente::setPDoctor(Doctor *pDoctor) {
 }
 
 
-string Paciente::tostring(){
-	stringstream a;
-	a<<"Paciente: "<<nombre<<" "<<apellido;
-	a<<"Cedula: "<<cedula<<"\n";
-	a<< "Sexo: " << sexo<<"\n";
-	a<< "Direccion: " << direccion << "\n";
-	a<< "Patologia: " << patologia << "\n";
-	a<< "Tipo de Cirugia: " << patologia <<"\n";
-	a<< "Estado: " << estado << "\n";
-	a<< "Prioridad: " << prioridad << "\n";
-	a<< "Fecha de Cirugia" << fechaCirugia << "\n";
-	if (pCama != NULL) {
-		a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
-	}
-	else {
-		a << "Cama asignada al Paciente: " << pCama << "\n";
-	}
-	a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
-	a << "Doctor asignado al Paciente: " << pDoctor << "\n";
+string Paciente::tostring() {
+    stringstream a;
+    a << "Paciente: " << nombre << " " << apellido;
+    a << "Cedula: " << cedula << "\n";
+    a << "Sexo: " << sexo << "\n";
+    a << "Direccion: " << direccion << "\n";
+    a << "Patologia: " << patologia << "\n";
+    a << "Tipo de Cirugia: " << patologia << "\n";
+    a << "Estado: " << estado << "\n";
+    a << "Prioridad: " << prioridad << "\n";
+    a << "Fecha de Cirugia" << fechaCirugia << "\n";
+    if (pCama != NULL) {
+        a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
+    } else {
+        a << "Cama asignada al Paciente: " << pCama << "\n";
+    }
+    a << "Cama asignada al Paciente: " << pCama->getCodigo() << "\n";
+    a << "Doctor asignado al Paciente: " << pDoctor << "\n";
 
-	return a.str();
+    return a.str();
 }
 
-void Paciente::cambiarCama(Cama* nuevaCama) {
-	pCama->setEPaciente(NULL);
-	pCama = nuevaCama;
+void Paciente::cambiarCama(Cama *nuevaCama) {
+    pCama->setEPaciente(NULL);
+    pCama = nuevaCama;
 }
+
+string Paciente::imprimirDatosPaciente() {
+
+    stringstream z;
+    z << "Nombre :" << nombre << "\n";
+    z << "Cedula :" << cedula << "\n";
+
+    return z.str();
+}
+
+string Paciente::informes() {//TERMINAR FALTA PABELLON
+
+    stringstream k;
+    k << "Nombre del paciente: " << nombre << "\n";
+    k << "Cedula del paciente: " << cedula << "\n";
+    k << "Cama asignada: " << pCama->getCodigo()<< "\n";
+    k << "Estado de la cama: " << pCama->isEstado() << "\n";
+    k << "Pabellon asignado: " << "\n";
+    k << "Patologia del paciente: " << patologia << "\n";
+    k << "Especialidad asignada por patologia " << "\n";
+    return k.str();
+
+}
+
+void Paciente::cambiarDoctor(Doctor *nuevoDoctor) {
+
+pDoctor= nuevoDoctor;
+}
+
+
+
 
 
 

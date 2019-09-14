@@ -20,9 +20,11 @@ class Interfaz
         void pabellones();
         void camas();
 
-        // Hospital hosp = Hospital();
-        Pabellon pab = Pabellon();
-        Cama cam = Cama();
-        // Pabellon *pPabellon;
+        arregloPabellon arrPab = arregloPabellon();
+        arregloCama arrCam = arregloCama();
+        arregloPaciente arrPac = arregloPaciente();
+        arregloEspecialidad arrEsp = arregloEspecialidad();
+        arregloPaciente arrPas = arregloPaciente();
+        arregloDoctor arrDoc = arregloDoctor();
 };
 #endif
